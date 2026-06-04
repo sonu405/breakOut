@@ -29,7 +29,7 @@ void Game::Init() {
 
   // load textures
   cout << "before loading the texture" << endl;
-//   cout << std::filesystem::current_path() << endl;
+  cout << std::filesystem::current_path() << endl;
 
   ResourceManager::LoadTexture("assets/textures/retroText.jpg", true, "retroTex");
   cout << "after loading the texture" << endl;
