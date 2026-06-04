@@ -1,0 +1,20 @@
+add_library(utility
+    src/resource_manager.cpp
+    src/shader.cpp
+    src/texture.cpp
+)
+
+target_include_directories(utility
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+target_link_libraries(utility
+    PUBLIC
+        glfw
+        opengl32
+        glad
+        glm
+        stb
+        stb_image_impl   
+)

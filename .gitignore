@@ -1,0 +1,61 @@
+# =========================
+# Build folders
+# =========================
+build/
+cmake-build-*/
+out/
+bin/
+obj/
+
+# =========================
+# CMake files (generated)
+# =========================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# =========================
+# Executables
+# =========================
+*.exe
+*.out
+*.app
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Compiled objects
+# =========================
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.pdb
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# External dependencies (optional)
+# If you git clone glfw/glad, KEEP them
+# If you download builds, ignore cache inside them
+# =========================
+lib/external/**/build/
+lib/external/**/CMakeCache.txt
+lib/external/**/CMakeFiles/

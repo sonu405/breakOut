@@ -1,0 +1,40 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(GameProject)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+file(GLOB LIB_DIRS RELATIVE ${CMAKE_SOURCE_DIR}/lib
+    ${CMAKE_SOURCE_DIR}/lib/*
+)
+
+add_subdirectory(lib/external/glfw)
+add_subdirectory(lib/external/glad)
+add_subdirectory(lib/external/glm)
+add_subdirectory(lib/external/stb)
+
+foreach(LIB ${LIB_DIRS})
+    if(IS_DIRECTORY ${CMAKE_SOURCE_DIR}/lib/${LIB})
+        if(EXISTS ${CMAKE_SOURCE_DIR}/lib/${LIB}/CMakeLists.txt)
+            add_subdirectory(lib/${LIB})
+        endif()
+    endif()
+endforeach()
+
+# -------------------------
+# Add all applications
+# -------------------------
+# file(GLOB APP_DIRS RELATIVE ${CMAKE_SOURCE_DIR}/apps
+#     ${CMAKE_SOURCE_DIR}/apps/*
+# )
+
+# foreach(APP ${APP_DIRS})
+#     if(IS_DIRECTORY ${CMAKE_SOURCE_DIR}/apps/${APP})
+#         if(EXISTS ${CMAKE_SOURCE_DIR}/apps/${APP}/CMakeLists.txt)
+#             add_subdirectory(apps/${APP})
+#         endif()
+#     endif()
+# endforeach()
+
+add_subdirectory(apps/breakout)
